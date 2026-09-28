@@ -3,6 +3,13 @@ FROM node:24 AS develop
 
 # build container
 FROM node:24 AS build
+
+# Instalar gulp-cli globalmente (necesario para el script postinstall de terriajs)
+# También instalamos build-essential y python3 por si algún módulo nativo necesita compilarse
+RUN apt-get update && apt-get install -y build-essential python3 && rm -rf /var/lib/apt/lists/* \
+    && npm install -g gulp-cli
+
+# Cambiar al usuario node para el resto de la construcción
 USER node
 
 COPY --chown=node:node . /app

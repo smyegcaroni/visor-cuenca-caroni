@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acerca del Proyecto Caroní</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      background: #f5f7fa;
+      color: #1e2a3a;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.15);
+      padding: 2.5rem 3rem;
+      transition: all 0.2s ease;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #0b2a3b;
+      border-left: 6px solid #2b8c5e;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #1a4b5e;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    h2:first-of-type {
+      margin-top: 0.5rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1a4b5e;
+      margin-top: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1.2rem;
+      text-align: justify;
+    }
+
+    ul, ol {
+      margin: 0.8rem 0 1.5rem 1.8rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: #f0f7f4;
+      border-left: 5px solid #2b8c5e;
+      padding: 1.2rem 1.8rem;
+      border-radius: 10px;
+      margin: 1.8rem 0;
+    }
+
+    .highlight-box strong {
+      color: #0e4b3a;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #2b8c5e;
+      color: white;
+      font-weight: 500;
+      font-size: 0.85rem;
+      padding: 0.2rem 1.2rem;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .feature-item {
+      background: #f9fbfd;
+      padding: 1.2rem 1.2rem 1.5rem;
+      border-radius: 14px;
+      border: 1px solid #e9edf2;
+      transition: transform 0.15s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-3px);
+      border-color: #b0cdc0;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item h4 {
+      font-weight: 600;
+      color: #0b2a3b;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #2d4054;
+      margin: 0;
+      text-align: left;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #dfe6ef;
+      font-size: 0.9rem;
+      color: #4b637a;
+      text-align: center;
+    }
+
+    .footer-note a {
+      color: #1e6f4b;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      .container {
+        padding: 1.5rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+        padding-left: 0.8rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Título principal -->
+  <span class="badge">🌿 Proyecto de Conservación</span>
+  <h1>
+    Conservación y uso sustentable de la diversidad biológica<br />
+    en la cuenca del río Caroní, estado Bolívar
+  </h1>
+
+  <!-- Descripción del proyecto -->
+  <h2>🌎 Contexto y alcance</h2>
+  <p>
+    La cuenca del río Caroní, ubicada en el estado Bolívar (Venezuela), alberga una de las mayores
+    riquezas biológicas del país. Este territorio, que incluye ecosistemas de bosque húmedo tropical,
+    sabanas y formaciones de tepuyes, es hogar de especies endémicas y de importancia global.
+    Sin embargo, enfrenta amenazas crecientes por actividades mineras, deforestación y cambio climático.
+  </p>
+  <p>
+    Este proyecto tiene como objetivo <strong>promover la conservación de la biodiversidad</strong>
+    mediante el uso sustentable de los recursos naturales, impulsando la participación de comunidades
+    locales, investigadores y tomadores de decisión. Se basa en un enfoque integral que combina
+    ciencia, tecnología y conocimiento tradicional.
+  </p>
+
+  <!-- Objetivos específicos -->
+  <h3>🎯 Objetivos estratégicos</h3>
+  <ul>
+    <li><strong>Diagnosticar</strong> el estado de la biodiversidad y los servicios ecosistémicos de la cuenca.</li>
+    <li><strong>Identificar</strong> áreas prioritarias para la conservación y restauración ecológica.</li>
+    <li><strong>Fomentar</strong> prácticas productivas sostenibles (agroforestería, ecoturismo, pesca responsable).</li>
+    <li><strong>Fortalecer</strong> la gobernanza local y la capacidad de gestión ambiental.</li>
+    <li><strong>Monitorear</strong> los cambios en la cobertura vegetal y la calidad del agua mediante herramientas geoespaciales.</li>
+  </ul>
+
+  <!-- BONDADES DEL VISUALIZADOR GEOESPACIAL -->
+  <h2>🛰️ El visualizador de datos geoespaciales como aliado</h2>
+  <p>
+    El visualizador geoespacial (basado en <strong>TerriaMap</strong>) es una plataforma interactiva que
+    integra capas de información geográfica, imágenes satelitales, datos climáticos y registros de
+    biodiversidad. Su uso en el proyecto aporta ventajas clave:
+  </p>
+
+  <div class="feature-grid">
+    <div class="feature-item">
+      <div class="feature-icon">🗺️</div>
+      <h4>Visualización integral</h4>
+      <p>Superposición de múltiples capas (vegetación, hidrografía, suelos, áreas protegidas) en un solo entorno.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">⏱️</div>
+      <h4>Monitoreo en tiempo real</h4>
+      <p>Acceso a datos actualizados de sensores remotos y estaciones terrestres para detectar cambios rápidamente.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🧠</div>
+      <h4>Toma de decisiones informada</h4>
+      <p>Permite evaluar escenarios, modelar impactos y priorizar acciones con base en evidencia espacial.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🤝</div>
+      <h4>Participación comunitaria</h4>
+      <p>Facilita la socialización de mapas y datos con las comunidades, promoviendo la co-gestión del territorio.</p>
+    </div>
+  </div>
+
+  <!-- Beneficios adicionales -->
+  <div class="highlight-box">
+    <strong>💡 ¿Por qué es transformador?</strong><br />
+    El visualizador no solo muestra datos; <strong>conecta el conocimiento científico con la acción</strong>.
+    Los gestores pueden identificar focos de deforestación, planificar corredores biológicos y evaluar
+    la efectividad de las medidas de conservación. Además, su interfaz amigable reduce la brecha
+    técnica, haciendo que la información geoespacial sea accesible para todos los actores del proyecto.
+  </div>
+
+  <!-- Ejemplos de aplicaciones concretas -->
+  <h3>📊 Aplicaciones prácticas en el proyecto</h3>
+  <ul>
+    <li>
+      <strong>Zonificación ecológica:</strong> Delimitación de áreas de amortiguamiento y
+      corredores de fauna con base en modelos de distribución de especies.
+    </li>
+    <li>
+      <strong>Evaluación de amenazas:</strong> Superposición de concesiones mineras y
+      áreas de alto valor de conservación para priorizar intervenciones.
+    </li>
+    <li>
+      <strong>Restauración hídrica:</strong> Identificación de microcuencas degradadas y
+      planificación de reforestación con especies nativas.
+    </li>
+    <li>
+      <strong>Educación ambiental:</strong> Uso de mapas interactivos en talleres comunitarios
+      para sensibilizar sobre la importancia de los ecosistemas locales.
+    </li>
+  </ul>
+
+  <!-- Cierre -->
+  <h2>🤲 Compromiso compartido</h2>
+  <p>
+    La conservación de la cuenca del Caroní es una responsabilidad colectiva. Con este visualizador,
+    ponemos la tecnología al servicio de la naturaleza y las comunidades. Invitamos a investigadores,
+    organizaciones y ciudadanos a explorar, aprender y contribuir a la gestión sustentable de este
+    patrimonio natural único.
+  </p>
+
+  <div class="footer-note">
+    Proyecto financiado por La FAO (Organización de las Naciones Unidas para la Alimentación y la Agricultura) · Caroní, estado Bolívar, Venezuela<br />
+    <a href="https://visorgeocaroni.gisdata.es">Página Proyecto</a> &middot; 
+    <a href="#">Contacto</a>
+  </div>
+
+</div>
+
+</body>
+</html>

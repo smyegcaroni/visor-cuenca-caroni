@@ -1,6 +1,9 @@
 .loader-ui img {
   display: block;
   margin: calc(50vh - 150px) auto;
+  width: 100px;
+  height: 100px;
+  object-fit: contain; /* para que no se deforme si el GIF tiene otra proporción */
 }
 
 @media (min-width: 768px) {

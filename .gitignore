@@ -30,3 +30,12 @@ yarn-error.log
 
 package-lock.json
 .nvmrc
+
+# Archivos locales y salidas generadas por la integración GeoLens
+.env
+.env.*
+!.env.example
+runtime/geolens/*.json
+!runtime/geolens/.gitkeep
+docker-compose.yml-ori
+wwwroot/init/*-ori

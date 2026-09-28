@@ -1,0 +1,13 @@
+.git
+.github
+.husky
+.idea
+.vscode
+.env
+.env.*
+node_modules
+runtime/geolens/*.json
+wwwroot/build
+wwwroot/doc
+*.log
+docker-compose.yml-ori

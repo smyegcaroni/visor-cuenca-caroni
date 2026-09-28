@@ -1,52 +1,62 @@
-# Terria Map
+# Visor de la Cuenca del Río Caroní
 
-[![Build Status](https://github.com/TerriaJS/TerriaMap/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/TerriaJS/TerriaMap/actions/workflows/ci.yml) [![Docs](https://img.shields.io/badge/docs-online-blue.svg)](https://docs.terria.io/)
+Aplicación cartográfica web del Sistema de Monitoreo y Evaluación Geoespacial (SMyEG) para la cuenca del río Caroní. La instancia de producción está disponible en [visor.caroni.org.ve](https://visor.caroni.org.ve).
 
-![Terria logo](terria-logo.png "Terria logo")
+El proyecto se basa en [TerriaMap 0.4.8](https://github.com/TerriaJS/TerriaMap/releases/tag/v0.4.8), que integra TerriaJS 8.13.0. Esta rama incorpora la identidad visual del proyecto, la configuración del visor, catálogos iniciales y sincronizadores para consumir colecciones publicadas por GeoLens.
 
-This is a complete website built using the TerriaJS library. See the [TerriaJS README](https://github.com/TerriaJS/TerriaJS) for information about TerriaJS, and getting started using this repository.
+## Componentes
 
-For instructions on how to deploy your map, see [the documentation here](doc/deploying/deploying-to-aws.md).
+- TerriaMap y `terriajs-server` en el puerto interno `3001`.
+- Imagen Docker `visor-smyeg-fao:latest`.
+- Publicación local del contenedor en el puerto `3000`.
+- Sincronizadores GeoLens ejecutados con Node.js 22.
+- Catálogos dinámicos escritos en `runtime/geolens/` y montados como archivos de solo lectura en el visor.
+- Nginx Proxy Manager como terminación HTTPS en el entorno de producción.
 
-To get in touch:
+## Requisitos
 
-- Join the [TerriaJS Github Discussion](https://github.com/TerriaJS/terriajs/discussions)
-- Raise issues in the [TerriaJS Github issue tracker](https://github.com/TerriaJS/terriajs/issues/new)
+- Docker Engine con Docker Compose v2.
+- Al menos 6 GB de memoria disponibles durante la construcción.
+- Acceso saliente a los registros de paquetes y a la instancia GeoLens configurada en `docker-compose.yml`.
+- Una red Docker externa llamada `geolens_default` cuando se use el Compose incluido.
 
----
+## Despliegue
 
-## Major announcements
+```bash
+git clone https://github.com/smyegcaroni/visor-cuenca-caroni.git
+cd visor-cuenca-caroni
 
-Following is a list of major announcements and upgrades that may affect users maintaining a fork (copied from [TerriaJS announcements](https://github.com/TerriaJS/terriajs/discussions/categories/announcements)). For a full list of changes to TerriaMap, including the latest versions of TerriaJS included with each release please refer to [CHANGES.md](https://github.com/TerriaJS/TerriaMap/blob/main/CHANGES.md).
+docker network inspect geolens_default >/dev/null 2>&1 \
+  || docker network create geolens_default
 
-### TerriaJS and TerriaMap monorepo consolidation incoming! (2026-06-15)
+docker build --pull -t visor-smyeg-fao:latest .
+docker compose config --quiet
+docker compose up -d
+```
 
-[TerriaMap will be folded into TerriaJS to streamline development](https://github.com/TerriaJS/terriajs/discussions/7863), changes will continue to be mirrored out to TerriaMap - consider migrating your fork to `terriajs/terriajs` if you are actively maintaining two separate forks (TerriaMap+terriajs).
+Comprobaciones mínimas:
 
-### We have released TerriaJS v8.3.0 (2023-05-22)
+```bash
+docker compose ps
+docker logs --tail 100 visor-smyeg-fao
+curl --fail --show-error http://127.0.0.1:3000/
+```
 
-Terriajs version `8.3.0` includes a few breaking changes:
+El proxy inverso debe compartir la red `geolens_default` y reenviar las solicitudes al servicio `visor-smyeg-fao` por el puerto interno `3001`. Las claves, contraseñas y archivos privados no deben incorporarse al repositorio.
 
-    - Upgrade to Typescript version 4.9.x
-    - Upgrade to Mobx version 6.9.x
+## Actualización desde TerriaMap
 
-This might affect your map only if it has local model layer modifications like your own custom data provider (aka catalog items). Otherwise you can proceed like any other normal upgrade. For instructions on upgrading your maps with local modiciations please refer to the [upgrade guide](https://github.com/TerriaJS/terriajs/discussions/6787).
+```bash
+git remote add upstream https://github.com/TerriaJS/TerriaMap.git
+git fetch upstream --tags
+git merge upstream/main
 
-### PM2 no longer supported (2023-03-21)
+docker build --pull -t visor-smyeg-fao:latest .
+docker compose up -d --no-deps --force-recreate terriamap
+```
 
-We've removed pm2 from our dependencies and no longer ship configuration for running terriajs-server with pm2.
+Antes de actualizar producción se debe conservar una imagen de reversión, revisar los cambios locales y comprobar la página principal, `config.json`, los catálogos iniciales y el certificado HTTPS.
 
-`npm start` now runs in forground because it no longer uses pm2. A new task `gulp dev` has been introduced to make development easier. It runs terriajs-server and starts `gulp watch` - which watches for changes and incrementally builds. See https://github.com/TerriaJS/terriajs/discussions/6731 for more information on why and what to do.
+## Licencia y proyecto base
 
-### We just reformatted our codebase with [Prettier](https://prettier.io/) (2022-08-29)
-
-This may cause large merge conflicts when you merge `main` into your fork. See https://github.com/TerriaJS/terriajs/discussions/6517 for instructions on how to merge this formatting change.
-
-### We have released TerriaJS v8 (2021-08-13)
-
-What this means:
-
-- [Our new main branch of TerriaMap](https://github.com/TerriaJS/TerriaMap/tree/main) now uses v8+ of TerriaJS
-- [The terriajs7 branch of TerriaMap](https://github.com/TerriaJS/TerriaMap/tree/terriajs7) will use v7 TerriaJS, but will not receive further updates
-- We have a [migration guide](https://docs.terria.io/guide/contributing/migration-guide/) available for users of TerriaJS v7 to help them upgrade their applications to TerriaJS v8
-- Please chat to us and the community in our [GitHub discussions forum](https://github.com/TerriaJS/terriajs/discussions)
+El código derivado de TerriaMap conserva la licencia incluida en [LICENSE.md](LICENSE.md). La documentación general de TerriaJS está disponible en [docs.terria.io](https://docs.terria.io/).

@@ -22,22 +22,13 @@
   },
   "catalog": [
     {
-      "id": "geolens-cuenca-rio-caroni",
-      "name": "🌱 Catálogo SMyEG - Proyecto FAO Cuenca del Río Caroní",
+      "id": "geolens-collections-dynamic",
+      "name": "Catálogos GeoLens",
       "type": "terria-reference",
-      "url": "init/geolens/geolens-caroni.json",
+      "url": "init/geolens/geolens-collections.json",
       "isGroup": true,
-      "description": "Catálogo sincronizado automáticamente desde la collection Cuenca del Río Caroní. El archivo init/geolens/geolens-caroni.json es regenerado por geolens_collection_to_terria.mjs.",
-      "cacheDuration": "30s"
-    },
-    {
-      "id": "geolens-servicios-ecosistemicos",
-      "name": "🌿 Catálogo Servicios Ecosistémicos",
-      "type": "terria-reference",
-      "url": "init/geolens/geolens-servicios-ecosistemicos.json",
-      "isGroup": true,
-      "description": "Catálogo sincronizado automáticamente desde la collection Catálogo Servicios Ecosistémicos de GeoLens.",
-      "cacheDuration": "30s"
+      "description": "Colecciones públicas de GeoLens sincronizadas automáticamente cada cinco minutos.",
+      "cacheDuration": "5m"
     },
     {
       "name": "🔥 Incendios Activos - NASA FIRMS",
@@ -47,7 +38,7 @@
         {
           "name": "Incendios MODIS (últimas 24h)",
           "type": "wms",
-          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/8be6d617d20bcdd560c894e2479a29b9/fires_modis_24/",
+          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/__NASA_FIRMS_MAP_KEY__/fires_modis_24/",
           "layers": "fires_modis_24",
           "attribution": "NASA FIRMS MODIS",
           "description": "Puntos de calor y fuegos activos detectados por MODIS en las últimas 24 horas. Resolución ~1km.",
@@ -61,7 +52,7 @@
         {
           "name": "Incendios MODIS (últimas 48h)",
           "type": "wms",
-          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/8be6d617d20bcdd560c894e2479a29b9/fires_modis_48/",
+          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/__NASA_FIRMS_MAP_KEY__/fires_modis_48/",
           "layers": "fires_modis_48",
           "attribution": "NASA FIRMS MODIS",
           "description": "Puntos de calor y fuegos activos detectados por MODIS en las últimas 48 horas.",
@@ -75,7 +66,7 @@
         {
           "name": "Incendios MODIS (últimos 7 días)",
           "type": "wms",
-          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/8be6d617d20bcdd560c894e2479a29b9/fires_modis_7/",
+          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/__NASA_FIRMS_MAP_KEY__/fires_modis_7/",
           "layers": "fires_modis_7",
           "attribution": "NASA FIRMS MODIS",
           "description": "Puntos de calor y fuegos activos detectados por MODIS en los últimos 7 días.",
@@ -89,7 +80,7 @@
         {
           "name": "Incendios VIIRS (últimas 24h) - Alta resolución",
           "type": "wms",
-          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/8be6d617d20bcdd560c894e2479a29b9/viirs_24/",
+          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/__NASA_FIRMS_MAP_KEY__/viirs_24/",
           "layers": "viirs_24",
           "attribution": "NASA FIRMS VIIRS",
           "description": "Puntos de calor y fuegos activos detectados por VIIRS en las últimas 24h. Resolución ~375m - Mayor precisión.",
@@ -103,7 +94,7 @@
         {
           "name": "Incendios VIIRS (últimas 48h) - Alta resolución",
           "type": "wms",
-          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/8be6d617d20bcdd560c894e2479a29b9/viirs_48/",
+          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/__NASA_FIRMS_MAP_KEY__/viirs_48/",
           "layers": "viirs_48",
           "attribution": "NASA FIRMS VIIRS",
           "description": "Puntos de calor y fuegos activos detectados por VIIRS en las últimas 48h. Resolución ~375m.",
@@ -117,7 +108,7 @@
         {
           "name": "Incendios VIIRS (últimos 7 días) - Alta resolución",
           "type": "wms",
-          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/8be6d617d20bcdd560c894e2479a29b9/viirs_7/",
+          "url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/__NASA_FIRMS_MAP_KEY__/viirs_7/",
           "layers": "viirs_7",
           "attribution": "NASA FIRMS VIIRS",
           "description": "Puntos de calor y fuegos activos detectados por VIIRS en los últimos 7 días. Resolución ~375m.",
@@ -144,7 +135,7 @@
           "name": "Positron (claro)",
           "type": "url-template-imagery",
           "opacity": 1,
-          "url": "https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png?key=cb1_2bv1_1_6bda82b3592f5412245a2af0",
+          "url": "https://basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png?key=__CARTO_API_KEY__",
           "attribution": "© OpenStreetMap contributors, © CARTO",
           "description": "Estilo claro Positron de CARTO.",
           "maximumLevel": 20
@@ -157,7 +148,7 @@
           "name": "Dark Matter (oscuro)",
           "type": "url-template-imagery",
           "opacity": 1,
-          "url": "https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=cb1_2bv1_1_6bda82b3592f5412245a2af0",
+          "url": "https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=__CARTO_API_KEY__",
           "attribution": "© OpenStreetMap contributors, © CARTO",
           "description": "Mapa base oscuro Dark Matter de CARTO.",
           "maximumLevel": 20
@@ -170,7 +161,7 @@
           "name": "Voyager",
           "type": "url-template-imagery",
           "opacity": 1,
-          "url": "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=cb1_2bv1_1_6bda82b3592f5412245a2af0",
+          "url": "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png?key=__CARTO_API_KEY__",
           "attribution": "© OpenStreetMap contributors, © CARTO",
           "description": "Mapa base Voyager de CARTO.",
           "maximumLevel": 20
@@ -257,5 +248,8 @@
         "image": "build/TerriaJS/images/esri_satellite.png"
       }
     ]
-  }
+  },
+  "corsDomains": [
+    "catalogo.caroni.org.ve"
+  ]
 }

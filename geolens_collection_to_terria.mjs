@@ -8,7 +8,7 @@
  *
  * Usage:
  *   node geolens_collection_to_terria.mjs \
- *     --base https://catalogo-smyeg.gisdata.es \
+ *     --base https://catalogo.caroni.org.ve \
  *     --collection "Cuenca del Río Caroní" \
  *     --output /data/geolens-caroni.json \
  *     --watch 300
@@ -20,7 +20,8 @@ import process from "node:process";
 
 function parseArgs(argv) {
   const out = {
-    base: "https://catalogo-smyeg.gisdata.es",
+    base: "https://catalogo.caroni.org.ve",
+    apiBase: null,
     collection: "Cuenca del Río Caroní",
     output: "wwwroot/init/geolens-caroni.json",
     watch: 0,
@@ -30,6 +31,7 @@ function parseArgs(argv) {
   for (let i = 2; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === "--base") out.base = argv[++i];
+    else if (arg === "--api-base") out.apiBase = argv[++i];
     else if (arg === "--collection") out.collection = argv[++i];
     else if (arg === "--output") out.output = argv[++i];
     else if (arg === "--watch") out.watch = Number(argv[++i] || 0);
@@ -37,7 +39,8 @@ function parseArgs(argv) {
     else if (arg === "--help" || arg === "-h") {
       console.log(
         "Usage: node geolens_collection_to_terria.mjs [options]\n\n" +
-        "  --base URL              GeoLens base URL\n" +
+        "  --base URL              GeoLens public base URL\n" +
+        "  --api-base URL          Optional internal API base URL\n" +
         "  --collection NAME       GeoLens collection name\n" +
         "  --output FILE           Output Terria init JSON\n" +
         "  --limit N               OGC API Features limit (default: 10000)\n" +
@@ -48,6 +51,7 @@ function parseArgs(argv) {
   }
 
   out.base = out.base.replace(/\/+$/, "");
+  out.apiBase = (out.apiBase || out.base).replace(/\/+$/, "");
   if (!Number.isFinite(out.watch) || out.watch < 0) out.watch = 0;
   if (!Number.isFinite(out.limit) || out.limit <= 0) out.limit = 10000;
   return out;
@@ -154,7 +158,12 @@ function absoluteTileUrl(value) {
   if (!isTileTemplate(value)) return null;
   const decoded = value.replace(/%7B/gi, "{").replace(/%7D/gi, "}");
   try {
-    return new URL(decoded, `${cfg.base}/`).href
+    const resolved = new URL(decoded, `${cfg.base}/`);
+    const apiOrigin = new URL(cfg.apiBase).origin;
+    const publicValue = resolved.origin === apiOrigin
+      ? `${cfg.base}${resolved.pathname}${resolved.search}${resolved.hash}`
+      : resolved.href;
+    return publicValue
       .replace(/%7B/gi, "{")
       .replace(/%7D/gi, "}");
   } catch {
@@ -208,8 +217,8 @@ function fallbackRasterTileUrl(datasetId) {
 
 async function listCollections() {
   const candidates = [
-    `${cfg.base}/api/catalog/collections/`,
-    `${cfg.base}/api/catalog/collections`
+    `${cfg.apiBase}/api/catalog/collections/`,
+    `${cfg.apiBase}/api/catalog/collections`
   ];
   let lastError;
 
@@ -226,7 +235,7 @@ async function listCollections() {
 }
 
 async function getCollectionDatasets(collectionId) {
-  const url = `${cfg.base}/api/catalog/collections/${encodeURIComponent(collectionId)}/datasets/`;
+  const url = `${cfg.apiBase}/api/catalog/collections/${encodeURIComponent(collectionId)}/datasets/`;
   const payload = await getJson(url);
   return firstArray(payload, ["datasets", "results", "items", "members"]);
 }
@@ -234,10 +243,10 @@ async function getCollectionDatasets(collectionId) {
 async function enrichDataset(datasetId, summary) {
   const encodedId = encodeURIComponent(datasetId);
   const candidates = [
-    `${cfg.base}/api/datasets/${encodedId}`,
-    `${cfg.base}/datasets/${encodedId}`,
-    `${cfg.base}/api/collections/${encodedId}`,
-    `${cfg.base}/api/stac/collections/${encodedId}`
+    `${cfg.apiBase}/api/datasets/${encodedId}`,
+    `${cfg.apiBase}/datasets/${encodedId}`,
+    `${cfg.apiBase}/api/collections/${encodedId}`,
+    `${cfg.apiBase}/api/stac/collections/${encodedId}`
   ];
   const details = [];
 
@@ -256,8 +265,8 @@ async function resolveRasterTileUrl(datasetId, dataset) {
 
   // Current GeoLens versions expose the authorized raster template here.
   for (const url of [
-    `${cfg.base}/tiles/token/${encodedId}/`,
-    `${cfg.base}/tiles/token/${encodedId}`
+    `${cfg.apiBase}/tiles/token/${encodedId}/`,
+    `${cfg.apiBase}/tiles/token/${encodedId}`
   ]) {
     const tokenResponse = await requestJson(url, { optional: true });
     if (tokenResponse.ok) {
@@ -267,7 +276,7 @@ async function resolveRasterTileUrl(datasetId, dataset) {
   }
 
   // Every GeoLens raster STAC item advertises a raster_tiles asset.
-  const stacUrl = `${cfg.base}/api/stac/collections/${encodedId}/items?limit=1`;
+  const stacUrl = `${cfg.apiBase}/api/stac/collections/${encodedId}/items?limit=1`;
   const stacResponse = await requestJson(stacUrl, { optional: true });
   if (stacResponse.ok) {
     const items = firstArray(stacResponse.payload, ["features", "items"]);
@@ -282,7 +291,7 @@ async function resolveRasterTileUrl(datasetId, dataset) {
 }
 
 async function probeVectorDataset(datasetId) {
-  const url = `${cfg.base}/api/collections/${encodeURIComponent(datasetId)}/items?limit=1`;
+  const url = `${cfg.apiBase}/api/collections/${encodeURIComponent(datasetId)}/items?limit=1`;
   const result = await requestJson(url, { optional: true });
   const payload = result.payload;
   const isFeatureCollection = result.ok && payload && (
@@ -393,7 +402,20 @@ async function buildOnce() {
   if (!collectionId) throw new Error(`La collection "${cfg.collection}" no expone un id/uuid.`);
 
   const datasets = await getCollectionDatasets(collectionId);
+  if (datasets.length === 0) {
+    throw new Error(
+      `La collection "${cfg.collection}" no contiene datasets visibles; ` +
+      `se conserva el catálogo existente en ${path.resolve(cfg.output)}.`
+    );
+  }
+
   const members = (await Promise.all(datasets.map(datasetToTerria))).filter(Boolean);
+  if (members.length === 0) {
+    throw new Error(
+      `Ningún dataset visible de "${cfg.collection}" pudo convertirse a TerriaJS; ` +
+      `se conserva el catálogo existente en ${path.resolve(cfg.output)}.`
+    );
+  }
 
   const output = { catalog: members };
   const outputPath = path.resolve(cfg.output);

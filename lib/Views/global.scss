@@ -153,3 +153,14 @@ body {
     }
     */
 }
+
+// Keep the custom links beside map settings, in desktop reading order.
+@media (min-width: 768px) {
+  :global(.tjs-menu-bar__menu-bar) {
+    justify-content: flex-end;
+    row-gap: 6px;
+  }
+  :global(.tjs-menu-bar__menu-bar) > section {
+    display: contents;
+  }
+}

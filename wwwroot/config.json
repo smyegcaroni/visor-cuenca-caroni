@@ -1,138 +1,91 @@
 {
-  /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
-  "initializationUrls": ["smyeg_geolens_auto"],
+  "initializationUrls": [
+    "smyeg_geolens_auto"
+  ],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
     "googleAnalyticsOptions": null,
-    "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMmRmNmUzYy1iYmJlLTQwZmQtOTAzYi03YmQwN2Y5NjRlMDciLCJpZCI6NjI2MzYsImlhdCI6MTYyNzMxOTI0N30.YJpKSUl9hI0xSm1TAwIRmw6bzVDfPF4e2aPfmFCA5Ks",
+    "cesiumIonAccessToken": "",
     "useCesiumIonBingImagery": true,
-    // Log ConsoleAnalytics events to console
-    // logToConsole: true,
-
-    /* Texto que aparece en la parte inferior del mapa */
     "disclaimer": {
       "text": "Fuente: Cuenca del Río Caroní | SMYEG FAO.",
       "url": "https://visor.caroni.org.ve"
     },
-    /*
-        // Texto que se agregará a cualquier página impresa desde su sitio.
-        printDisclaimer:{
-            text:"Visor Cartográfico | Cuenca del Río Caroní",
-            url: "https://visor.caroni.org.ve"
-        },
-        */
-
-    // Pop-up disclaimer that will be shown at the start
-    // The text of the disclaimer is in lib/Views/GlobalDisclaimer.html
-    // globalDisclaimer: {
-    //     confirmationRequired: false,
-    //     buttonTitle: "I agree",
-    //     title: "Disclaimer",
-    //     // If the current browser location is not prod, or is dev, then show a "not the real site" warning.
-    //     // The text of that is in lib/Views/DevelopmentDisclaimerPreamble.html
-    //     //prodHostRegex: "gov.\\.au$",
-    //     //devHostRegex: "\\b(staging|preview|test|dev)\\.",
-    //     enableOnLocalhost: true // If false, don't show this when running on localhost
-    // },
-
-    /*
-        developerAttribution: {
-            text: "Visor Cartográfico | Cuenca del Río Caroní",
-            link: "https://visor.caroni.org.ve"
-        },*/
-    // This is used in various text messages. You should also set <title> in index.html
     "appName": "Visor Cartográfico | Cuenca del Río Caroní",
-
-    // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
     "brandBarElements": [
       "",
-      "<a href=\"https://visor.caroni.org.ve\"><img src=\"images/logo_fao.svg\" height=\"52\" title=\"Version: {{version}}\" /></a>", 
+      "<a href=\"https://visor.caroni.org.ve\"><img src=\"/caroni-branding/logo_fao_caroni.png?v=fe76114f2c7d\" width=\"350\" height=\"40\" style=\"max-width:100%;height:auto;object-fit:contain\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
-    // Shown when things go wrong.
     "supportEmail": "smyeg.caroni@gmail.com",
     "theme": {
-          "charcoalGrey": "#253858",
-          "colorPrimary": "#02aab0",
-          "transparent-dark": "#1C4767",
-          "colorSplitter": "#ecad02",
-          "compassWidth": "56",
-          "dark": "#1C4767",
-          "darkWithOverlay": "#445b6d",
-          "frontComponentZIndex": "99",
-          "grey": "#ffffff",
-          "greyLighter": "#ddd",
-          "greyLighter2": "#e6e6e6",
-          "greyLightest": "#f2f2f2",
-          "lg": "1300",
-          "mapButtonColor": "#ffffff",
-          "mapButtonTop": "18",
-          "mapNavigationTop": "80",
-          "md": "992",
-          "mobile": "767",
-          "modalBg": "#fff",
-          "modalHighlight": "#809AA6",
-          "modalText": "#000",
-          "overlay": "rgba(255, 255, 255, 0.25)",
-          "overlayInvert": "rgba(255, 255, 255, 0.85)",
-          "radius40Button": "50",
-          "radiusLarge": "50",
-          "radiusSmall": "50",
-          "ringWidth": "10",
-          "sm": "768",
-          "spacing": "5",
-          "textBlack": "#000",
-          "textDark": "#595b60",
-          "textDarker": "#4d5766",
-          "textLight": "#ffffff",
-          "textLightDimmed": "#bbbbbb",
-          "trainerHeight": "64",
-          "workbenchWidth": "350",
-
-        },
-    // You probably shouldn't change this.
+      "charcoalGrey": "#1C4767",
+      "colorPrimary": "#5792c9",
+      "transparent-dark": "#1C4767",
+      "colorSplitter": "#ecad02",
+      "compassWidth": "56",
+      "dark": "#1C4767",
+      "darkWithOverlay": "#5792c9",
+      "frontComponentZIndex": "99",
+      "grey": "#ffffff",
+      "greyLighter": "#ddd",
+      "greyLighter2": "#e6e6e6",
+      "greyLightest": "#f2f2f2",
+      "lg": "1300",
+      "mapButtonColor": "#ffffff",
+      "mapButtonTop": "18",
+      "mapNavigationTop": "80",
+      "md": "992",
+      "mobile": "767",
+      "modalBg": "#fff",
+      "modalHighlight": "#116AAB",
+      "modalText": "#000",
+      "overlay": "rgba(255, 255, 255, 0.25)",
+      "overlayInvert": "rgba(255, 255, 255, 0.85)",
+      "radius40Button": "50",
+      "radiusLarge": "50",
+      "radiusSmall": "50",
+      "ringWidth": "10",
+      "sm": "768",
+      "spacing": "5",
+      "textBlack": "#000",
+      "textDark": "#595b60",
+      "textDarker": "#4d5766",
+      "textLight": "#ffffff",
+      "textLightDimmed": "#bbbbbb",
+      "trainerHeight": "64",
+      "workbenchWidth": "350",
+      "fontImports": "@import url(\"caroni-branding/caroni-colors.css?v=98b150fef471\");\n"
+    },
     "proj4ServiceBaseUrl": "proj4def/",
-    // Or this
-    //"feedbackUrl": "feedback",
     "tabbedCatalog": true,
-    // Modo de visor móvil predeterminado al cargar el mapa por primera vez en plataformas móviles..
-    // Las opciones son: "3DTerrain", "3DSmooth", "2D"
     "mobileDefaultViewerMode": "2d",
     "viewerMode": "2d",
-    // Habilite las funciones experimentales, ya que es bueno tener la vanguardia..
-    // Deshabilítelo si algo sale mal con las funciones experimentales o si sus usuarios no son robustos a las funciones que pueden cambiar o desaparecer por completo.
     "experimentalFeatures": true,
-    // Para habilitar el mensaje de bienvenida cuando el mapa se carga por primera vez
     "showWelcomeMessage": false,
-    // Para anular el video del mensaje de bienvenida que se muestra en el mensaje de bienvenida.
-    // De forma predeterminada, se muestra el video Getting Started to Terria
-     "welcomeMessageVideo": {
-         "videoTitle": "Empezando con el mapa",
-         "videoUrl": "https://www.youtube-nocookie.com/embed/NTtSM70rIvI", // use an embedded video link
-         "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
+    "welcomeMessageVideo": {
+      "videoTitle": "Empezando con el mapa",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/NTtSM70rIvI",
+      "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
     },
-
-    //  Mostrar guías en la aplicación..
     "showInAppGuides": true,
-
-    // see `languageOverrides.json` in languages/en
     "languageConfiguration": {
       "enabled": true,
       "debug": false,
       "languages": {
         "es": "Spanish",
-        "en": "English",
+        "en": "English"
       },
-    "fallbackLanguage": "es",
-    "changeLanguageOnStartWhen": [
-    "querystring",
-    "localStorage",
-    "navigator",
-    "htmlTag"
-  ]
+      "fallbackLanguage": "es",
+      "changeLanguageOnStartWhen": [
+        "querystring",
+        "localStorage",
+        "navigator",
+        "htmlTag"
+      ]
     },
- "searchBarConfig": {},
+    "searchBarConfig": {},
     "searchProviders": [
       {
         "id": "search-provider/cesium-ion",
@@ -142,252 +95,69 @@
         "minCharacters": 3
       }
     ],
-
-
     "helpContent": [
       {
-        "title": "translate#gettingstarted.title",
+        "title": "Empezando con el mapa",
         "itemName": "gettingstarted",
         "paneMode": "videoAndContent",
-        "markdownText": "translate#gettingstarted.markdownText",
+        "markdownText": "# Empezando con el mapa\n\nSi es nuevo en el mapa o usa datos espaciales, nuestro video de Introducción cubre rápidamente la funcionalidad básica que necesitará usar para agregar e interrogar conjuntos de datos.\n\n Si no tiene tiempo para ver el video, le sugerimos explorar las siguientes áreas:\n\n1. Busque una ubicación para encontrar rápidamente un área de interés\n2. Use 'Explore los datos del mapa 'para ver el catálogo de conjuntos de datos disponibles y agregarlos al mapa\n3. Interactúe con la capa de datos, incluida la opacidad y la activación y desactivación a la izquierda en su banco de trabajo\n4. Haga clic en los datos del mapa para ver datos más detallados, incluidos los datos sin procesar.\n5. Cambie su mapa base usando las opciones en 'Configuración del mapa' para ayudar a que algunos conjuntos de datos sean más visibles\n6. Amplíe y cambie su vista, incluida la inclinación del ángulo de visión usando los controles en el lado derecho de la pantalla",
         "icon": "video",
-        "videoUrl": "translate#gettingstarted.videoUrl",
-        "placeholderImage": "translate#gettingstarted.placeholderImage"
+        "videoUrl": "https://www.youtube-nocookie.com/embed/C7Lzlb22bek",
+        "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
       },
       {
-        "title": "translate#stepbystepguide.title",
+        "title": "Guía paso por paso",
         "itemName": "stepbystepguide",
         "paneMode": "trainer",
-        "markdownText": "translate#stepbystepguide.markdownText",
+        "markdownText": "# Guía paso a paso  n  nInicie una guía paso a paso para varios flujos de trabajo populares a continuación:",
         "icon": "oneTwoThree",
         "trainerItems": [
           {
-            "title": "translate#stepbystepguide.gettingstarted.title",
-            "footnote": "translate#stepbystepguide.gettingstarted.footnote",
+            "title": "Agregar imágenes de satélite",
+            "footnote": "Importante: las imágenes de satélite pueden tardar un poco en cargarse, así que tenga paciencia. Si parece que las imágenes no se cargan, aleje un poco la imagen",
             "steps": [
               {
-                "title": "translate#stepbystepguide.gettingstarted.step1.title",
-                "markdownDescription": "translate#stepbystepguide.gettingstarted.step1.markdownDescription"
+                "title": "Encuentra la ubicación para ver imágenes de satélite",
+                "markdownDescription": "- Utilice la búsqueda de ubicación o haga zoom y desplácese por el mapa con el mouse o los controles de zoom"
               },
               {
-                "title": "translate#stepbystepguide.gettingstarted.step2.title",
-                "markdownDescription": "translate#stepbystepguide.gettingstarted.step2.markdownDescription"
+                "title": "Agrega las imágenes de satélite al mapa",
+                "markdownDescription": "- Abra el catálogo de datos usando \"Explorar datos\" button\n- Navegue a través de conjuntos de datos para seleccionar su opción de satélite: Landsat o Sentinel, e imágenes diarias o compuestas. Esto puede depender de la resolución de la imagen que necesita (10 mo 25 m) y si desea imágenes diarias, compuestas de 16 días o promedio anual.\n - Seleccione \"Agregar al mapa\" para ver las imágenes de satélite"
               },
               {
-                "title": "translate#stepbystepguide.gettingstarted.step3.title",
-                "markdownDescription": "translate#stepbystepguide.gettingstarted.step3.markdownDescription"
+                "title": "Filtrar imágenes para buscar imágenes de satélite",
+                "markdownDescription": "- Filtre imágenes por ubicación para encontrar rápidamente imágenes de satélite para esa ubicación\n - Si aún no ha seleccionado su punto de interés en el mapa, acérquese para seleccionar uno. Verá el filtro aplicado en azul en el Área de trabajo a la izquierda"
               },
               {
-                "title": "translate#stepbystepguide.gettingstarted.step4.title"
+                "title": "Seleccione una hora y una fecha",
+                "markdownDescription": "- Utilice el selector de fecha para seleccionar una fecha y una hora. Desplazarse hacia atrás a través de años anteriores usando la flecha hacia atrás\n - Elija otra fecha si sus imágenes están oscurecidas por las nubes. Puede retroceder y avanzar rápidamente utilizando las flechas junto al selector de fecha"
+              }
+            ]
+          },
+          {
+            "title": "Ver y comparar diferentes puntos en el tiempo",
+            "footnote": "Importante: cualquier dato de serie temporal se puede comparar utilizando el modo de pantalla dividida, no solo imágenes de satélite",
+            "steps": [
+              {
+                "title": "Agregar un conjunto de datos de series de tiempo al mapa",
+                "markdownDescription": "- Las imágenes de satélite son un buen ejemplo de datos de series de tiempo, con muchos satélites que se remontan a décadas\n- Encuentre su ubicación de interés y filtre las imágenes disponibles por esta ubicación\n-Consulte nuestra guía Agregar imágenes de satélite al mapa para obtener más información."
               },
               {
-                "title": "translate#stepbystepguide.gettingstarted.step5.title"
+                "title": "Seleccione la hora y la fecha",
+                "markdownDescription": "- En el banco de trabajo de la izquierda, seleccione la hora y la fecha que abrirán el selector de fechas\n- Seleccione un año, mes y fecha, o navegue hacia atrás a otros años e incluso siglos usando la flecha hacia atrás\n- Las fechas disponibles aparecen en azul"
               },
               {
-                "title": "translate#stepbystepguide.gettingstarted.step6.title"
+                "title": "Compare diferentes fechas en un solo lugar",
+                "markdownDescription": "- Desde el menú desplegable de 3 puntos en el banco de trabajo, presione 'Comparar' para activar el modo de pantalla dividida\n- Aparecerá una copia duplicada de su conjunto de datos en el banco de trabajo\n- Elija las fechas que desea comparar a la izquierda y a la derecha de la pantalla\n- Arrastre el control deslizante con el botón blanco para deslizar y comparar las dos fechas de la imagen"
               },
               {
-                "title": "translate#stepbystepguide.gettingstarted.step7.title"
-              },
-              {
-                "title": "translate#stepbystepguide.gettingstarted.step8.title"
+                "title": "Cerrar el modo de pantalla dividida",
+                "markdownDescription": "- Salga del modo de pantalla dividida presionando el 'x' del título del modo de pantalla dividida en el área de trabajo\n- Elimine la copia duplicada de su conjunto de datos en el área de trabajo usando el menú desplegable de 3 puntos"
               }
             ]
           }
-          // -- Uncomment to enable the following trainer guides --
-          // {
-          //   "title": "stepbystepguide.satelliteimagery.title",
-          //   "footnote": "stepbystepguide.satelliteimagery.footnote",
-          //   "steps": [
-          //     {
-          //       "title": "stepbystepguide.satelliteimagery.step1.title",
-          //       "markdownDescription": "stepbystepguide.satelliteimagery.step1.markdownDescription"
-          //     },
-          //     {
-          //       "title": "stepbystepguide.satelliteimagery.step2.title",
-          //       "markdownDescription": "stepbystepguide.satelliteimagery.step2.markdownDescription"
-          //     },
-          //     {
-          //       "title": "stepbystepguide.satelliteimagery.step3.title",
-          //     "markdownDescription": "stepbystepguide.satelliteimagery.step3.markdownDescription"
-          //     },
-          //     {
-          //       "title": "stepbystepguide.satelliteimagery.step4.title",
-          //       "markdownDescription": "stepbystepguide.satelliteimagery.step4.markdownDescription"
-          //     }
-          //   ]
-          // },
-          // {
-          //   "title": "stepbystepguide.comparetimeseries.title",
-          //   "footnote": "stepbystepguide.comparetimeseries.footnote",
-          //   "steps": [
-          //     {
-          //       "title": "stepbystepguide.comparetimeseries.step1.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step1.markdownDescription"
-          //     },
-          //     {
-          //       "title": "stepbystepguide.comparetimeseries.step2.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step2.markdownDescription"
-          //     },
-          //     {
-          //       "title": "stepbystepguide.comparetimeseries.step3.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step3.markdownDescription"
-          //     },
-          //     {
-          //       "title": "stepbystepguide.comparetimeseries.step4.title",
-          //       "markdownDescription": "stepbystepguide.comparetimeseries.step4.markdownDescription"
-          //     }
-          //   ]
-          // }
         ]
-      },
-      {
-        "icon": "story",
-        "itemName": "storymigration",
-        "markdownText": "## Share & Story Migration\n\n### Guide on updating share links, including stories\n\nIf you've received a warning telling you that a share link was based off an older version of TerriaJS, you'll want to do a few things to recreate them in the latest version of Terria!\n\n#### Creators\n\n1. Identify the share URL which causes a notification of share preservation effort when loading them into Terria. e.g. you may know where they are embedded, or come across them accidentally\n2. Open them in the newer (v8) based map application \n3. Check that everything is sharing as you expect, tweak the layers to fit if some are missing or not behaving correctly.\n4. Update the share link by clicking the Share/Print button and copy the new link\n5. If distribution of share link is known, update the url in your web page (if embedded), or send the new link to users \n\n#### Consumers\n1. Load the share URL\n2. If it doesn't quite look right, notify the provider so they can follow the above steps to recreate it in the latest version of Terria",
-        "title": "Share & Story migration"
-      },
-      // For maps with satellite imagery, also see `showInAppGuides`
-      {
-           "itemName": "satelliteimagery",
-           "title": "Satellite Imagery",
-           "paneMode": "slider",
-           "icon": "satellite"
       }
-    ],
-
-    //Or direct strings
-    "helpContent": [
-       {
-           "title": "Empezando con el mapa",
-           "itemName": "gettingstarted",
-           "paneMode": "videoAndContent",
-           "markdownText": "# Empezando con el mapa\n\nSi es nuevo en el mapa o usa datos espaciales, nuestro video de Introducción cubre rápidamente la funcionalidad básica que necesitará usar para agregar e interrogar conjuntos de datos.\n\n Si no tiene tiempo para ver el video, le sugerimos explorar las siguientes áreas:\n\n1. Busque una ubicación para encontrar rápidamente un área de interés\n2. Use 'Explore los datos del mapa 'para ver el catálogo de conjuntos de datos disponibles y agregarlos al mapa\n3. Interactúe con la capa de datos, incluida la opacidad y la activación y desactivación a la izquierda en su banco de trabajo\n4. Haga clic en los datos del mapa para ver datos más detallados, incluidos los datos sin procesar.\n5. Cambie su mapa base usando las opciones en 'Configuración del mapa' para ayudar a que algunos conjuntos de datos sean más visibles\n6. Amplíe y cambie su vista, incluida la inclinación del ángulo de visión usando los controles en el lado derecho de la pantalla",
-           "icon": "video",
-           "videoUrl": "https://www.youtube-nocookie.com/embed/C7Lzlb22bek",
-           "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
-       },
-       {
-           "title": "Guía paso por paso",
-           "itemName": "stepbystepguide",
-           "paneMode": "trainer",
-           "markdownText": "# Guía paso a paso \ n \ nInicie una guía paso a paso para varios flujos de trabajo populares a continuación:",
-           "icon": "oneTwoThree",
-           "trainerItems": [
-               {
-                   "title": "Agregar imágenes de satélite",
-                   "footnote": "Importante: las imágenes de satélite pueden tardar un poco en cargarse, así que tenga paciencia. Si parece que las imágenes no se cargan, aleje un poco la imagen",
-                   "steps": [
-                       {
-                           "title": "Encuentra la ubicación para ver imágenes de satélite",
-                           "markdownDescription": "- Utilice la búsqueda de ubicación o haga zoom y desplácese por el mapa con el mouse o los controles de zoom"
-                       },
-                       {
-                           "title": "Agrega las imágenes de satélite al mapa",
-                           "markdownDescription": "- Abra el catálogo de datos usando \"Explorar datos\" button\n- Navegue a través de conjuntos de datos para seleccionar su opción de satélite: Landsat o Sentinel, e imágenes diarias o compuestas. Esto puede depender de la resolución de la imagen que necesita (10 mo 25 m) y si desea imágenes diarias, compuestas de 16 días o promedio anual.\n - Seleccione \"Agregar al mapa\" para ver las imágenes de satélite"
-                       },
-                       {
-                           "title": "Filtrar imágenes para buscar imágenes de satélite",
-                           "markdownDescription": "- Filtre imágenes por ubicación para encontrar rápidamente imágenes de satélite para esa ubicación\n - Si aún no ha seleccionado su punto de interés en el mapa, acérquese para seleccionar uno. Verá el filtro aplicado en azul en el Área de trabajo a la izquierda"
-                       },
-                       {
-                           "title": "Seleccione una hora y una fecha",
-                           "markdownDescription": "- Utilice el selector de fecha para seleccionar una fecha y una hora. Desplazarse hacia atrás a través de años anteriores usando la flecha hacia atrás\n - Elija otra fecha si sus imágenes están oscurecidas por las nubes. Puede retroceder y avanzar rápidamente utilizando las flechas junto al selector de fecha"
-                       }
-                   ]
-               },
-               {
-                   "title": "Ver y comparar diferentes puntos en el tiempo",
-                   "footnote": "Importante: cualquier dato de serie temporal se puede comparar utilizando el modo de pantalla dividida, no solo imágenes de satélite",
-                   "steps": [
-                       {
-                           "title": "Agregar un conjunto de datos de series de tiempo al mapa",
-                           "markdownDescription": "- Las imágenes de satélite son un buen ejemplo de datos de series de tiempo, con muchos satélites que se remontan a décadas\n- Encuentre su ubicación de interés y filtre las imágenes disponibles por esta ubicación\n-Consulte nuestra guía Agregar imágenes de satélite al mapa para obtener más información."
-                       },
-                       {
-                           "title": "Seleccione la hora y la fecha",
-                           "markdownDescription": "- En el banco de trabajo de la izquierda, seleccione la hora y la fecha que abrirán el selector de fechas\n- Seleccione un año, mes y fecha, o navegue hacia atrás a otros años e incluso siglos usando la flecha hacia atrás\n- Las fechas disponibles aparecen en azul"
-                       },
-                       {
-                           "title": "Compare diferentes fechas en un solo lugar",
-                           "markdownDescription": "- Desde el menú desplegable de 3 puntos en el banco de trabajo, presione 'Comparar' para activar el modo de pantalla dividida\n- Aparecerá una copia duplicada de su conjunto de datos en el banco de trabajo\n- Elija las fechas que desea comparar a la izquierda y a la derecha de la pantalla\n- Arrastre el control deslizante con el botón blanco para deslizar y comparar las dos fechas de la imagen"
-                       },
-                       {
-                           "title": "Cerrar el modo de pantalla dividida",
-                           "markdownDescription": "- Salga del modo de pantalla dividida presionando el 'x' del título del modo de pantalla dividida en el área de trabajo\n- Elimine la copia duplicada de su conjunto de datos en el área de trabajo usando el menú desplegable de 3 puntos"
-                       }
-                   ]
-               },
-               // Only for maps with delta-enabled catalog items
-               // {
-               //     "title": "Detecting change between two points in time",
-               //     "steps": [
-               //         {
-               //             "title": "Add a Change Detection / Difference-enabled dataset to the map",
-               //             "markdownDescription": "- This includes the dataset Delta Blended Service\n- Search or scroll to find the location where you want to perform change detection"
-               //         },
-               //         {
-               //             "title": "Turn on Difference mode",
-               //             "markdownDescription": "-  Behind the 3 dots in the workbench, select the menu item 'Difference'\n-   Difference mode will activate, splitting the screen and adding new options on the left"
-               //         },
-               //         {
-               //             "title": "Select your Difference variables",
-               //             "markdownDescription": "-   Use the date pickers at the bottom to choose your dates for screen A and B\n -   The Preview style defaults to True colour to help you find cloud-free images, change if required\n -   If you have previously searched for a location, this will be used to refine the imagery to only show available images for that location\n -   If you didn't search for a location, select a point on the map in your area of interest to refine the imagery for that area only\n -   Select your Difference Output, e.g. NDVI\n -   Select Generate Change Detection"
-               //         },
-               //         {
-               //             "title": "View the change detection results on-screen",
-               //             "markdownDescription": "-   The legend for the Difference calculation will appear on the left to help your analysis\n -   You can change dates using the date pickers to toggle between dates and a new Change Detection calculation will be run\n -   Close or exit Difference mode when you are finished your analysis"
-               //         }
-               //     ]
-               // }
-           ]
-       },
-       // For maps with satellite imagery, also see `showInAppGuides`
-       // {
-       //     "itemName": "satelliteimagery",
-       //     "title": "Satellite Imagery",
-       //     "paneMode": "slider",
-       //     "icon": "satellite"
-       // }
-     ],
-
-// "helpContentTerms": [
-    //   {
-    //       term: "dataset",
-    //       aliases: ["data set", "data sets", "datasets"],
-    //       content: "A collection of related information, organised as one using a common data structure, e.g. \"average house prices in Sydney for 2019\" or \"minimum and maximum daily temperature\""
-    //   },
-    //   {
-    //       term: "time series",
-    //       aliases: ["timeseries"],
-    //       content: "A sequence of data collected over different points in time, e.g. temperature sensor data or a gallery of images of the same location"
-    //   },
-    //   {
-    //       term: "workbench",
-    //       content: "The panel on the left side of the screen that shows what datasets you have added to the map"
-    //   },
-    //   {
-    //       term: "4D",
-    //       content: "3D data that also has a time-series component"
-    //   },
-    //   {
-    //       term: "catalog",
-    //       aliases: ["catalogue"],
-    //       content: "the inventory of all datasets available to be added to the map"
-    //   },
-    //   {
-    //       term: "base maps",
-    //       aliases: ["basemap", "base map", "basemaps"],
-    //       content: "Different map options for the blank base map, such as Bing imagery, roads, dark or light maps"
-    //   },
-    //   {
-    //       term: "source dataset",
-    //       content: "The dataset you added to your workbench that allows for difference calculations"
-    //   },
-    //   {
-    //       term: "preview style",
-    //       content: "The way the dataset appears in the preview window. We recommend true colour to search for cloud-free images"
-    //   }
-    // ]
+    ]
   }
 }

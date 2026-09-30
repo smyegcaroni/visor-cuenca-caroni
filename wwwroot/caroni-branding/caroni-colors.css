@@ -1,0 +1,20 @@
+/* Caroni branding: opaque blue for Terria's derived panel background. */
+:root {
+  --theme-transparent-dark: #1C4767 !important;
+}
+
+/* Map menu buttons: retain white text and existing focus indicators. */
+.tjs-_buttons__btn--map {
+  background-color: #116AAB !important;
+}
+
+/* Caroni navigation grouping: custom links immediately before map settings. */
+@media (min-width: 768px) {
+  .tjs-menu-bar__menu-bar {
+    justify-content: flex-end;
+    row-gap: 6px;
+  }
+  .tjs-menu-bar__menu-bar > section {
+    display: contents;
+  }
+}

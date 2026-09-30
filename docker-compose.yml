@@ -1,6 +1,9 @@
 services:
   terriamap:
     image: visor-smyeg-fao:latest
+    build:
+      context: .
+      target: deploy
     container_name: visor-smyeg-fao
     restart: unless-stopped
 
@@ -35,13 +38,16 @@ services:
     volumes:
       - ./smyeg_geolens_auto.json:/app/wwwroot/init/smyeg_geolens_auto.json:ro
       - ./runtime/geolens:/app/wwwroot/init/geolens:ro
+      - ./runtime/branding/config.json:/app/wwwroot/config.json:ro
+      - ./wwwroot/caroni-branding:/app/wwwroot/caroni-branding:ro
+      - ./wwwroot/images/logo_fao.svg:/app/wwwroot/images/logo_fao.svg:ro
 
     networks:
       - terriamap-net
       - geolens
 
   # ============================================================
-  # SINCRONIZADOR CUENCA DEL RÍO CARONÍ
+  # SINCRONIZADOR DINÁMICO DE TODAS LAS COLLECTIONS GEOLENS
   # ============================================================
   geolens-sync:
     image: node:22-alpine
@@ -51,62 +57,30 @@ services:
 
     command:
       - node
-      - /sync/geolens_collection_to_terria.mjs
+      - /sync/geolens_collections_to_terria.mjs
       - --base
-      - https://catalogo-smyeg.gisdata.es
-      - --collection
-      - "Cuenca del Río Caroní"
-      - --output
-      - /data/geolens-caroni.json
+      - https://catalogo.caroni.org.ve
+      - --api-base
+      - http://geolens-api-1:8000
+      - --output-dir
+      - /data/collections
+      - --index-output
+      - /data/geolens-collections.json
+      - --public-prefix
+      - init/geolens/collections
       - --watch
       - "300"
-
-    volumes:
-      - ./geolens_collection_to_terria.mjs:/sync/geolens_collection_to_terria.mjs:ro
-      - ./runtime/geolens:/data
-
-    mem_limit: 256m
-    mem_reservation: 64m
-    cpus: "0.25"
-
-    logging:
-      driver: "json-file"
-      options:
-        max-size: "5m"
-        max-file: "3"
-
-    init: true
-
-    networks:
-      - terriamap-net
-
-  # ============================================================
-  # SINCRONIZADOR CATÁLOGO SERVICIOS ECOSISTÉMICOS
-  # ============================================================
-  geolens-sync-servicios-ecosistemicos:
-    image: node:22-alpine
-    container_name: geolens-sync-servicios-ecosistemicos
-    restart: unless-stopped
-    working_dir: /sync
-
-    command:
-      - node
-      - /sync/geolens_collection_to_terria.mjs
-      - --base
-      - https://catalogo-smyeg.gisdata.es
-      - --collection-id
-      - 842b04bb-005a-40be-8d46-ba02e935987b
-      - --collection
-      - "Catálogo Servicios Ecosistémicos"
-      - --output
-      - /data/geolens-servicios-ecosistemicos.json
       - --limit
+      - "100000"
+      - --concurrency
+      - "3"
+      - --timeout
       - "20000"
-      - --watch
-      - "300"
+      - --retries
+      - "3"
 
     volumes:
-      - ./geolens_collection_to_terria.mjs:/sync/geolens_collection_to_terria.mjs:ro
+      - ./geolens_collections_to_terria.mjs:/sync/geolens_collections_to_terria.mjs:ro
       - ./runtime/geolens:/data
 
     mem_limit: 256m
@@ -123,6 +97,7 @@ services:
 
     networks:
       - terriamap-net
+      - geolens
 
 networks:
   terriamap-net:

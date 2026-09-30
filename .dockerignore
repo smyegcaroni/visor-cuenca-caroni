@@ -10,3 +10,11 @@ wwwroot/build
 wwwroot/doc
 *.log
 docker-compose.yml-ori
+backups/
+runtime/
+outputs/
+
+/smyeg_geolens_auto.json
+.env
+.env.*
+.git/

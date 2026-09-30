@@ -19,6 +19,7 @@ module.exports = function ({ devMode, baseHref = "/" }) {
     output: {
       path: path.resolve(__dirname, "..", "wwwroot", "build"),
       filename: "TerriaMap.js",
+      chunkFilename: "[id].[contenthash:12].TerriaMap.js",
       publicPath: "build/",
       sourcePrefix: "", // to avoid breaking multi-line string literals by inserting extra tabs.
       globalObject: "(self || window)" // to avoid breaking in web worker (https://github.com/webpack/webpack/issues/6642)
@@ -112,9 +113,11 @@ module.exports = function ({ devMode, baseHref = "/" }) {
       // Extract SASS styles into a seperate stylesheet
       new MiniCssExtractPlugin({
         filename: "TerriaMap.css",
+        chunkFilename: "[id].[contenthash:12].TerriaMap.css",
         ignoreOrder: true
       }),
       new HtmlPlugin({
+        hash: true,
         filename: path.resolve(__dirname, "..", "wwwroot", "index.html"),
         template: path.resolve(__dirname, "..", "wwwroot", "index.ejs"),
         templateParameters: {

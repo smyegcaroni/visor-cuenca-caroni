@@ -39,3 +39,14 @@ runtime/geolens/*.json
 !runtime/geolens/.gitkeep
 docker-compose.yml-ori
 wwwroot/init/*-ori
+backups/
+runtime/branding/*.js
+runtime/branding/index.html
+runtime/geolens/collections/
+*.caroni-*-tmp
+outputs/
+
+# Configuración privada creada desde plantillas
+/runtime/branding/config.json
+/smyeg_geolens_auto.json
+*.tmp

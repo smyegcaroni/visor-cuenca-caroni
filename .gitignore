@@ -50,3 +50,14 @@ outputs/
 /runtime/branding/config.json
 /smyeg_geolens_auto.json
 *.tmp
+
+# Configuración privada y artefactos históricos del servidor
+/wwwroot/init/smyeg_geolens_auto.json
+/runtime/*
+!/runtime/branding/
+/runtime/branding/*
+!/runtime/branding/config.template.json
+!/runtime/geolens/
+/runtime/geolens/*
+!/runtime/geolens/.gitkeep
+*.save

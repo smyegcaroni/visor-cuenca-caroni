@@ -23,7 +23,7 @@
   "catalog": [
     {
       "id": "geolens-collections-dynamic",
-      "name": "Catálogos GeoLens",
+      "name": "🗂️ Colección de Datos Proyecto Caroní",
       "type": "terria-reference",
       "url": "init/geolens/geolens-collections.json",
       "isGroup": true,
@@ -140,7 +140,7 @@
           "description": "Estilo claro Positron de CARTO.",
           "maximumLevel": 20
         },
-        "image": "build/TerriaJS/images/positron.png"
+        "image": "caroni-assets/basemaps/positron.png?v=35d4feaa4638"
       },
       {
         "item": {
@@ -153,7 +153,7 @@
           "description": "Mapa base oscuro Dark Matter de CARTO.",
           "maximumLevel": 20
         },
-        "image": "build/TerriaJS/images/darks.png"
+        "image": "caroni-assets/basemaps/darks.png?v=57c117f73164"
       },
       {
         "item": {
@@ -166,7 +166,7 @@
           "description": "Mapa base Voyager de CARTO.",
           "maximumLevel": 20
         },
-        "image": "build/TerriaJS/images/voyager.png"
+        "image": "caroni-assets/basemaps/voyager.png?v=b2d676972330"
       },
       {
         "item": {
@@ -177,11 +177,11 @@
           "attribution": "© Google",
           "description": "Mapa de carreteras estándar de Google."
         },
-        "image": "build/TerriaJS/images/google_roads.png"
+        "image": "caroni-assets/basemaps/google_roads.png?v=9ba066269235"
       },
       {
-        "item": "//Surface Geology",
-        "image": "build/TerriaJS/images/google_roads.png"
+        "item": "basemap-bing-aerial-with-labels",
+        "image": "caroni-assets/basemaps/bing-aerial-labels.png?v=d1a945c39e92"
       },
       {
         "item": {
@@ -193,11 +193,11 @@
           "attribution": "© OpenTopoMap",
           "description": "Curvas de nivel, relieve sombreado y detalles de terreno."
         },
-        "image": "build/TerriaJS/images/open_topo_maps.png"
+        "image": "caroni-assets/basemaps/open_topo_maps.png?v=5bd7c3818af7"
       },
       {
-        "item": "//Surface Geology",
-        "image": "build/TerriaJS/images/open_topo_maps.png"
+        "item": "basemap-bing-aerial",
+        "image": "caroni-assets/basemaps/bing-aerial.png?v=7b0457ab063a"
       },
       {
         "item": {
@@ -209,11 +209,11 @@
           "attribution": "© Google",
           "description": "Imágenes satelitales de Google (alta resolución en zonas urbanas)."
         },
-        "image": "build/TerriaJS/images/google_satellite.png"
+        "image": "caroni-assets/basemaps/google_satellite.png?v=3752bee346fd"
       },
       {
-        "item": "//Surface Geology",
-        "image": "build/TerriaJS/images/google_satellite.png"
+        "item": "basemap-bing-roads",
+        "image": "caroni-assets/basemaps/bing-maps-roads.png?v=a79baad0a783"
       },
       {
         "item": {
@@ -225,11 +225,11 @@
           "attribution": "© Google",
           "description": "Satélite + carreteras y etiquetas."
         },
-        "image": "build/TerriaJS/images/google_hybrid.png"
+        "image": "caroni-assets/basemaps/google_hybrid.png?v=12f5a71cbe90"
       },
       {
-        "item": "//Surface Geology",
-        "image": "build/TerriaJS/images/google_hybrid.png"
+        "item": "basemap-natural-earth-II",
+        "image": "caroni-assets/basemaps/natural-earth.png?v=365cca56ab8a"
       },
       {
         "item": {
@@ -241,11 +241,11 @@
           "attribution": "Esri, Maxar, Earthstar Geographics, and the GIS User Community",
           "description": "Imágenes satelitales globales de Esri (gratuito)."
         },
-        "image": "build/TerriaJS/images/esri_satellite.png"
+        "image": "caroni-assets/basemaps/esri_satellite.png?v=eb55a0e10102"
       },
       {
-        "item": "//Surface Geology",
-        "image": "build/TerriaJS/images/esri_satellite.png"
+        "item": "basemap-openstreetmap",
+        "image": "caroni-assets/basemaps/openstreetmap.png?v=dc5d2a197d22"
       }
     ]
   },

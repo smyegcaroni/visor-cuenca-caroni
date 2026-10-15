@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="terria">
+<html lang="es" class="terria">
   <head>
     <base href="<%= baseHref %>" />
     <meta charset="utf-8" />
@@ -9,93 +9,36 @@
       name="viewport"
       content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
-    <meta name="description" content="Visor cartográfico" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-
-    <link
-      rel="apple-touch-icon"
-      sizes="57x57"
-      href="favicons/apple-icon-57x57.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="60x60"
-      href="favicons/apple-icon-60x60.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="72x72"
-      href="favicons/apple-icon-72x72.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="favicons/apple-icon-76x76.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="114x114"
-      href="favicons/apple-icon-114x114.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="120x120"
-      href="favicons/apple-icon-120x120.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="144x144"
-      href="favicons/apple-icon-144x144.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="152x152"
-      href="favicons/apple-icon-152x152.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicons/apple-icon-180x180.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="favicons/android-icon-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="favicons/favicon-96x96.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicons/favicon-16x16.png"
-    />
-    <link rel="manifest" href="favicons/manifest.json" />
-    <meta name="msapplication-TileColor" content="#1C4767" />
     <meta
-      name="msapplication-TileImage"
-      content="favicons/ms-icon-144x144.png"
+      name="description"
+      content="Visor Caroní para la consulta de información geoespacial del proyecto SMYEG de la FAO."
     />
-    <meta name="theme-color" content="#1C4767" />
+    <meta name="application-name" content="Visor Caroní" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Visor Caroní" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
 
-    <title>Visor Cartográfico| SMYEG FAO </title>
+    <meta name="msapplication-TileColor" content="#245C66" />
+    <meta name="theme-color" content="#245C66" />
+
+    <title>Visor Caroní | SMYEG FAO</title>
 
     <!-- Leaflet -->
     <script>
       L_PREFER_CANVAS = true;
     </script>
-  </head>
+  <link rel="icon" type="image/png" sizes="16x16" href="caroni-assets/favicons/favicon-16.png?v=20261014visoricon1" />
+<link rel="icon" type="image/png" sizes="32x32" href="caroni-assets/favicons/favicon-32.png?v=20261014visoricon1" />
+<link rel="apple-touch-icon" sizes="180x180" href="caroni-assets/favicons/apple-touch-icon.png?v=20261014visoricon1" />
+<link rel="manifest" href="caroni-assets/favicons/site.webmanifest?v=20261014visoricon1" />
+<link rel="stylesheet" href="pwa.css?v=20261002" />
+<script defer src="pwa.js?v=20261014visoricon1"></script>
+<script defer src="/caroni-branding/logo-same-tab.js?v=1e49075afe2f"></script>
+<link rel="stylesheet" href="caroni-branding/caroni-colors.css?v=1b5903823bc5"/>
+</head>
 
   <body>
     <div id="svg-sprites" style="display: none"></div>

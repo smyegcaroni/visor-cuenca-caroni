@@ -1,0 +1,46 @@
+{
+  "id": "/",
+  "name": "Visor Caroní | SMYEG FAO",
+  "short_name": "Visor Caroní",
+  "description": "Consulta de información geoespacial del proyecto SMYEG de la FAO.",
+  "lang": "es-VE",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#245C66",
+  "theme_color": "#245C66",
+  "categories": [
+    "maps",
+    "navigation",
+    "productivity"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "pwa-icon-192x192.png?v=20261014visoricon1",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-icon-512x512.png?v=20261014visoricon1",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-maskable-icon-192x192.png?v=20261014visoricon1",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "pwa-maskable-icon-512x512.png?v=20261014visoricon1",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

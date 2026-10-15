@@ -2,6 +2,14 @@
 
 Visor del Sistema de Monitoreo y Evaluación Geoespacial (SMyEG), basado en TerriaMap. Instancia pública: [visor.caroni.org.ve](https://visor.caroni.org.ve). Catálogo GeoLens: [catalogo.caroni.org.ve](https://catalogo.caroni.org.ve).
 
+## Estado de la publicación
+
+El código y los recursos estáticos se consolidaron el 15 de octubre de 2026 a partir de la instancia activa `visor-smyeg-fao:20261014-pwaicon1`. Se incluyen los iconos, la instalación PWA, el modo sin conexión, los colores y el comportamiento del logotipo de cabecera publicados. El logotipo abre el visor en la misma pestaña; los enlaces del menú conservan su comportamiento.
+
+Las plantillas reflejan la configuración efectiva y el orden de los catálogos de producción. Las claves se proporcionan mediante `.env`; los catálogos dinámicos se regeneran desde GeoLens. Los respaldos, los archivos de ejecución privados y los módulos compilados no se versionan. Los hashes de los archivos de la publicación comprobada están en `docs/production-assets-20261015.json`.
+
+Una imagen con nombre de producción es una referencia local, no una imagen pública descargable. Para una instalación nueva se debe construir con `docker compose build terriamap` en un equipo con recursos suficientes y transferir la imagen al servidor cuando corresponda. Esta sincronización no recompiló ni sustituyó la imagen activa.
+
 ## Personalización
 
 El encabezado y la pantalla de carga usan `logo_fao_caroni.png`; la pantalla de carga muestra el logo a 350 × 40 px. La barra superior incluye **Sobre el proyecto** y **Catalogo Geodatos**, en ese orden antes de Map Settings. Ambos enlaces abren una pestaña nueva. Se retiró el botón About.
@@ -76,6 +84,22 @@ Compruebe en el navegador los dos enlaces, la ausencia de About y la apertura de
 No publique `.env`, claves SSH, configuraciones privadas, copias de seguridad ni catálogos con claves de acceso. Si una clave se publicó en un commit anterior, eliminarla del estado actual del repositorio no la borra del historial: debe reemplazarse en el proveedor.
 
 Antes de limpiar Docker, identifique las imágenes usadas por todos los contenedores, incluidos los detenidos. No elimine volúmenes de datos. La limpieza de la caché de compilación no detiene los servicios, pero obliga a reconstruir las capas en compilaciones posteriores.
+
+## Actualizaciones y recuperación
+
+Antes de modificar una instalación existente, respalde el repositorio, los archivos privados y la configuración Compose. Conserve la imagen anterior y registre los contenedores activos. Incorpore los cambios locales de las plantillas antes de volver a ejecutar el preparador.
+
+Para actualizar únicamente el visor con una imagen ya construida y disponible localmente:
+
+```bash
+docker compose up -d --no-deps --no-build --pull never terriamap
+docker compose ps terriamap
+curl --fail --show-error https://visor.caroni.org.ve/config.json >/dev/null
+```
+
+Para revertir una actualización de imagen, restaure el Compose y los archivos privados del respaldo y ejecute el mismo comando con la imagen anterior. No elimine volúmenes ni reinicie servicios ajenos al visor.
+
+Las claves que hayan aparecido en versiones anteriores continúan en el historial Git. Esta consolidación retira los valores del estado actual sin reescribir ese historial; su sustitución se gestiona con cada proveedor.
 
 ## Licencia
 

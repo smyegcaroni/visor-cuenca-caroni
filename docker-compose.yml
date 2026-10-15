@@ -1,6 +1,6 @@
 services:
   terriamap:
-    image: visor-smyeg-fao:latest
+    image: visor-smyeg-fao:20261014-pwaicon1
     build:
       context: .
       target: deploy

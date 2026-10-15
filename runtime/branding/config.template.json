@@ -9,24 +9,28 @@
     "cesiumIonAccessToken": "",
     "useCesiumIonBingImagery": true,
     "disclaimer": {
-      "text": "Fuente: Cuenca del Río Caroní | SMYEG FAO.",
+      "text": "Fuente: Proyecto Conservación y uso sustentable de la diversidad biológica en la cuenca del río Caroní, Estado Bolívar",
       "url": "https://visor.caroni.org.ve"
     },
-    "appName": "Visor Cartográfico | Cuenca del Río Caroní",
+    "developerAttribution": {
+      "text": "Proyecto FAO MINEC Cuenta del Río Caroní",
+      "link": "http://caroni.org.ve"
+    },
+    "appName": "Visor Cuenca Río Caroní | FAO",
     "brandBarElements": [
       "",
-      "<a href=\"https://visor.caroni.org.ve\"><img src=\"/caroni-branding/logo_fao_caroni.png?v=fe76114f2c7d\" width=\"350\" height=\"40\" style=\"max-width:100%;height:auto;object-fit:contain\" title=\"Version: {{version}}\" /></a>",
+      "<a href=\"https://visor.caroni.org.ve\" target=\"_self\"><img src=\"/caroni-branding/logo_fao_caroni.png?v=fe76114f2c7d\" width=\"350\" height=\"40\" style=\"max-width:100%;height:auto;object-fit:contain\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     "supportEmail": "smyeg.caroni@gmail.com",
     "theme": {
-      "charcoalGrey": "#1C4767",
-      "colorPrimary": "#5792c9",
-      "transparent-dark": "#1C4767",
+      "charcoalGrey": "#FCE000",
+      "colorPrimary": "#35818F",
+      "transparent-dark": "#245C66",
       "colorSplitter": "#ecad02",
       "compassWidth": "56",
-      "dark": "#1C4767",
-      "darkWithOverlay": "#5792c9",
+      "dark": "#245C66",
+      "darkWithOverlay": "#476581",
       "frontComponentZIndex": "99",
       "grey": "#ffffff",
       "greyLighter": "#ddd",
@@ -42,7 +46,7 @@
       "modalHighlight": "#116AAB",
       "modalText": "#000",
       "overlay": "rgba(255, 255, 255, 0.25)",
-      "overlayInvert": "rgba(255, 255, 255, 0.85)",
+      "overlayInvert": "rgba(255, 255, 255, 0.99)",
       "radius40Button": "50",
       "radiusLarge": "50",
       "radiusSmall": "50",
@@ -56,18 +60,19 @@
       "textLightDimmed": "#bbbbbb",
       "trainerHeight": "64",
       "workbenchWidth": "350",
-      "fontImports": "@import url(\"caroni-branding/caroni-colors.css?v=98b150fef471\");\n"
+      "fontImports": "@import url(\"caroni-branding/caroni-colors.css?v=0297f549b48c\");\n"
     },
     "proj4ServiceBaseUrl": "proj4def/",
-    "tabbedCatalog": true,
+    "feedbackUrl": "feedback",
+    "tabbedCatalog": false,
     "mobileDefaultViewerMode": "2d",
     "viewerMode": "2d",
     "experimentalFeatures": true,
-    "showWelcomeMessage": false,
+    "showWelcomeMessage": true,
     "welcomeMessageVideo": {
-      "videoTitle": "Empezando con el mapa",
-      "videoUrl": "https://www.youtube-nocookie.com/embed/NTtSM70rIvI",
-      "placeholderImage": "https://img.youtube.com/vi/NTtSM70rIvI/maxresdefault.jpg"
+      "videoTitle": "Caroni FAO",
+      "videoUrl": "https://www.youtube.com/watch?v=rhlTKvOzc-0",
+      "placeholderImage": "https://img.youtube.com/vi/rhlTKvOzc-0/maxresdefault.jpg"
     },
     "showInAppGuides": true,
     "languageConfiguration": {
@@ -83,7 +88,8 @@
         "localStorage",
         "navigator",
         "htmlTag"
-      ]
+      ],
+      "overridesBaseUrl": "/caroni-branding/languages/welcome-97438a460715/"
     },
     "searchBarConfig": {},
     "searchProviders": [
@@ -102,8 +108,8 @@
         "paneMode": "videoAndContent",
         "markdownText": "# Empezando con el mapa\n\nSi es nuevo en el mapa o usa datos espaciales, nuestro video de Introducción cubre rápidamente la funcionalidad básica que necesitará usar para agregar e interrogar conjuntos de datos.\n\n Si no tiene tiempo para ver el video, le sugerimos explorar las siguientes áreas:\n\n1. Busque una ubicación para encontrar rápidamente un área de interés\n2. Use 'Explore los datos del mapa 'para ver el catálogo de conjuntos de datos disponibles y agregarlos al mapa\n3. Interactúe con la capa de datos, incluida la opacidad y la activación y desactivación a la izquierda en su banco de trabajo\n4. Haga clic en los datos del mapa para ver datos más detallados, incluidos los datos sin procesar.\n5. Cambie su mapa base usando las opciones en 'Configuración del mapa' para ayudar a que algunos conjuntos de datos sean más visibles\n6. Amplíe y cambie su vista, incluida la inclinación del ángulo de visión usando los controles en el lado derecho de la pantalla",
         "icon": "video",
-        "videoUrl": "https://www.youtube-nocookie.com/embed/C7Lzlb22bek",
-        "placeholderImage": "https://img.youtube.com/vi/FjSxaviSLhc/maxresdefault.jpg"
+        "videoUrl": "https://www.youtube.com/watch?v=BaM3nPX6M_4",
+        "placeholderImage": "https://img.youtube.com/vi/BaM3nPX6M_4/maxresdefault.jpg"
       },
       {
         "title": "Guía paso por paso",
@@ -157,6 +163,12 @@
             ]
           }
         ]
+      }
+    ],
+    "extraCreditLinks": [
+      {
+        "text": "map.extraCreditLinks.termsOfUse",
+        "url": "https://visor.caroni.org.ve/about.html"
       }
     ]
   }

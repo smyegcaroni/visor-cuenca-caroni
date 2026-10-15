@@ -1,11 +1,17 @@
-/* Caroni branding: opaque blue for Terria's derived panel background. */
+/* Caroni branding: opaque teal for Terria's derived panel background. */
 :root {
-  --theme-transparent-dark: #1C4767 !important;
+  --theme-transparent-dark: #245C66 !important;
 }
 
 /* Map menu buttons: retain white text and existing focus indicators. */
 .tjs-_buttons__btn--map {
   background-color: #116AAB !important;
+}
+
+/* Requested backgrounds: top menu and the two sidebar data actions. */
+.tjs-menu-bar__menu-bar .tjs-_buttons__btn--map,
+[class*="SidePanel___StyledDiv"] > [class*="Box-sc-"] > button[class*="Button__StyledButton"] {
+  background-color: #35818F !important;
 }
 
 /* Caroni navigation grouping: custom links immediately before map settings. */
@@ -17,4 +23,46 @@
   .tjs-menu-bar__menu-bar > section {
     display: contents;
   }
+}
+
+/* Right map controls: opaque Caroni background and white symbols. */
+[class*="MapNavigation__StyledMapNavigation"] button,
+[class*="MapNavigation__StyledMapNavigation"] [class*="ZoomControl__StyledZoomControl"] {
+  background-color: #245C66 !important;
+  color: #ffffff !important;
+}
+
+[class*="MapNavigation__StyledMapNavigation"] button svg {
+  fill: #ffffff !important;
+}
+
+[class*="MapNavigation__StyledMapNavigation"] button:not(:disabled):hover {
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+[class*="MapNavigation__StyledMapNavigation"] button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #245C66;
+}
+
+/* Compass glyphs contain their own grey strokes, independent of the theme. */
+[class*="Compass__StyledCompass-sc"] svg,
+#terriajs-compass-outer > g > path:first-child,
+#terriajs-compass-inner > g > circle,
+#terriajs-compass-inner-arrows circle {
+  fill: #245C66 !important;
+}
+
+#terriajs-compass-outer path[stroke],
+#terriajs-compass-outer circle,
+#terriajs-compass-inner g[stroke],
+#terriajs-compass-inner path[stroke] {
+  stroke: #ffffff !important;
+}
+
+#terriajs-compass-outer circle,
+#terriajs-compass-inner > g > path[fill],
+#terriajs-compass-inner-arrows path {
+  fill: #ffffff !important;
 }

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#245C66" />
+    <title>Visor Caroní | Sin conexión</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        align-items: center;
+        background: #f4f8fa;
+        color: #182631;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+      }
+      main {
+        background: #ffffff;
+        border-top: 6px solid #02aab0;
+        box-shadow: 0 14px 40px rgba(28, 71, 103, 0.18);
+        max-width: 520px;
+        padding: 36px;
+        text-align: center;
+      }
+      img {
+        height: 104px;
+        object-fit: contain;
+        width: 104px;
+      }
+      h1 {
+        color: #245C66;
+        font-size: 28px;
+        margin: 18px 0 12px;
+      }
+      p {
+        line-height: 1.55;
+        margin: 0 0 22px;
+      }
+      button {
+        background: #245C66;
+        border: 0;
+        border-radius: 6px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 700;
+        min-height: 44px;
+        padding: 10px 20px;
+      }
+      button:focus-visible {
+        outline: 3px solid #ecad02;
+        outline-offset: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img
+        src="caroni-assets/favicons/pwa-icon-192x192.png?v=20261014visoricon1"
+        alt=""
+      />
+      <h1>Visor Caroní está sin conexión</h1>
+      <p>
+        La interfaz esencial está disponible cuando fue almacenada previamente.
+        Para consultar capas, mapas base o servicios geoespaciales, restablece la
+        conexión a Internet.
+      </p>
+      <button type="button" onclick="window.location.reload()">
+        Intentar de nuevo
+      </button>
+    </main>
+  </body>
+</html>

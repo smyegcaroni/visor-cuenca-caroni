@@ -8,7 +8,7 @@ export const Loader = () => {
     <div
       className={Styles.loaderUi}
       style={{
-        backgroundColor: "#1C4767",
+        backgroundColor: "#245C66",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

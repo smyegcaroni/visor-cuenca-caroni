@@ -4,14 +4,14 @@
       "id": "geolens-3387bcb0-58e1-4575-a7bb-1a61b984b949",
       "name": "cobertura_usos_2023",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/3387bcb0-58e1-4575-a7bb-1a61b984b949/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/3387bcb0-58e1-4575-a7bb-1a61b984b949/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
       "metadataUrls": [
         {
           "title": "Metadatos OGC API - GeoLens",
-          "url": "https://catalogo-smyeg.gisdata.es/api/collections/3387bcb0-58e1-4575-a7bb-1a61b984b949"
+          "url": "https://catalogo.caroni.org.ve/api/collections/3387bcb0-58e1-4575-a7bb-1a61b984b949"
         }
       ]
     },
@@ -19,14 +19,14 @@
       "id": "geolens-68a61900-6155-4163-8a54-3452f2c136de",
       "name": "suelos_edelca",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/68a61900-6155-4163-8a54-3452f2c136de/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/68a61900-6155-4163-8a54-3452f2c136de/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
       "metadataUrls": [
         {
           "title": "Metadatos OGC API - GeoLens",
-          "url": "https://catalogo-smyeg.gisdata.es/api/collections/68a61900-6155-4163-8a54-3452f2c136de"
+          "url": "https://catalogo.caroni.org.ve/api/collections/68a61900-6155-4163-8a54-3452f2c136de"
         }
       ]
     },
@@ -34,7 +34,7 @@
       "id": "geolens-d965978d-9ba0-43fe-8a4e-d98b99062860",
       "name": "reportes_fauna",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/d965978d-9ba0-43fe-8a4e-d98b99062860/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/d965978d-9ba0-43fe-8a4e-d98b99062860/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
@@ -49,14 +49,14 @@
       "id": "geolens-3bda012e-5430-4889-8581-4d51d376bdc0",
       "name": "flora_reportes",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/3bda012e-5430-4889-8581-4d51d376bdc0/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/3bda012e-5430-4889-8581-4d51d376bdc0/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
       "metadataUrls": [
         {
           "title": "Metadatos OGC API - GeoLens",
-          "url": "https://catalogo-smyeg.gisdata.es/api/collections/3bda012e-5430-4889-8581-4d51d376bdc0"
+          "url": "https://catalogo.caroni.org.ve/api/collections/3bda012e-5430-4889-8581-4d51d376bdc0"
         }
       ]
     },
@@ -64,14 +64,14 @@
       "id": "geolens-f9bfe338-17f4-4fab-a829-99a301507d77",
       "name": "red drenaje",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/f9bfe338-17f4-4fab-a829-99a301507d77/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/f9bfe338-17f4-4fab-a829-99a301507d77/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
       "metadataUrls": [
         {
           "title": "Metadatos OGC API - GeoLens",
-          "url": "https://catalogo-smyeg.gisdata.es/api/collections/f9bfe338-17f4-4fab-a829-99a301507d77"
+          "url": "https://catalogo.caroni.org.ve/api/collections/f9bfe338-17f4-4fab-a829-99a301507d77"
         }
       ]
     },
@@ -79,14 +79,14 @@
       "id": "geolens-8fd3049b-c5a7-426c-9cdc-a525853cdea8",
       "name": "poblaciones",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/8fd3049b-c5a7-426c-9cdc-a525853cdea8/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/8fd3049b-c5a7-426c-9cdc-a525853cdea8/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
       "metadataUrls": [
         {
           "title": "Metadatos OGC API - GeoLens",
-          "url": "https://catalogo-smyeg.gisdata.es/api/collections/8fd3049b-c5a7-426c-9cdc-a525853cdea8"
+          "url": "https://catalogo.caroni.org.ve/api/collections/8fd3049b-c5a7-426c-9cdc-a525853cdea8"
         }
       ]
     },
@@ -94,14 +94,14 @@
       "id": "geolens-1455aa09-9393-4635-93c1-45163a1f8e47",
       "name": "ejes_turisticos",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/1455aa09-9393-4635-93c1-45163a1f8e47/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/1455aa09-9393-4635-93c1-45163a1f8e47/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
       "metadataUrls": [
         {
           "title": "Metadatos OGC API - GeoLens",
-          "url": "https://catalogo-smyeg.gisdata.es/api/collections/1455aa09-9393-4635-93c1-45163a1f8e47"
+          "url": "https://catalogo.caroni.org.ve/api/collections/1455aa09-9393-4635-93c1-45163a1f8e47"
         }
       ]
     },
@@ -109,14 +109,14 @@
       "id": "geolens-9e6ca4e0-5514-4d30-b446-8a54677fb40f",
       "name": "Manhattan_Building_Heights",
       "type": "geojson",
-      "url": "https://catalogo-smyeg.gisdata.es/api/collections/9e6ca4e0-5514-4d30-b446-8a54677fb40f/items?limit=10000",
+      "url": "https://catalogo.caroni.org.ve/api/collections/9e6ca4e0-5514-4d30-b446-8a54677fb40f/items?limit=10000",
       "attribution": "SMyEG - Proyecto FAO Cuenca del Río Caroní",
       "description": "",
       "opacity": 0.9,
       "metadataUrls": [
         {
           "title": "Metadatos OGC API - GeoLens",
-          "url": "https://catalogo-smyeg.gisdata.es/api/collections/9e6ca4e0-5514-4d30-b446-8a54677fb40f"
+          "url": "https://catalogo.caroni.org.ve/api/collections/9e6ca4e0-5514-4d30-b446-8a54677fb40f"
         }
       ]
     }

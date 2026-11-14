@@ -51,7 +51,7 @@ export const TerriaUserInterface = ({ terria, viewState, themeOverrides }) => {
     >
       <MenuLeft>
         <CaroniLink
-          caption="Sobre el proyecto"
+          caption="El proyecto"
           href="https://caroni.org.ve"
           key="caroni-project"
         />

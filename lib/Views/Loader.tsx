@@ -1,6 +1,4 @@
 import globeGif from "../Styles/globe.gif";
-// Si el logo está en src, impórtalo:
-// import logoSvg from "../images/logo_fao.svg"; 
 import Styles from "./loader.scss";
 
 export const Loader = () => {
@@ -8,7 +6,7 @@ export const Loader = () => {
     <div
       className={Styles.loaderUi}
       style={{
-        backgroundColor: "#1C4767",
+        backgroundColor: "#245C66",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -26,10 +24,14 @@ export const Loader = () => {
           alignItems: "center",
           justifyContent: "center",
           width: "100%",
-          marginTop: "140px"   // ✅ Desplaza el bloque hacia abajo
+          marginTop: "140px"
         }}
       >
-        <img src={globeGif} style={{ maxWidth: "120px", maxHeight: "120px" }} alt="Globe" />
+        <img
+          src={globeGif}
+          style={{ maxWidth: "120px", maxHeight: "120px" }}
+          alt="Globe"
+        />
         <span
           style={{
             color: "white",
@@ -41,16 +43,19 @@ export const Loader = () => {
           Cargando Visor...
         </span>
       </div>
-
-      {/* Logo FAO: elige la opción que corresponda a tu proyecto */}
-      {/* Opción 1: importado (descomentar import y usar src={logoSvg}) */}
-      {/* <img src={logoSvg} alt="Logo FAO" style={{ marginTop: "20px", width: "280px", height: "auto" }} /> */}
-      
-      {/* Opción 2: ruta absoluta desde public (si está en public/images/logo_fao.svg) */}
-      <img src="/caroni-branding/logo_fao_caroni.png?v=fe76114f2c7d" alt="FAO Cuenca del Río Caroní" width={350} height={40} style={{ marginTop: "20px", width: "350px", height: "40px", objectFit: "contain" }} />
-      
-      {/* Opción 3: URL externa (si el logo está alojado en ese servidor) */}
-      {/* <img src="https://visor-smyeg.gisdata.es/images/logo_fao.svg" alt="Logo FAO" style={{ marginTop: "20px", width: "280px", height: "auto" }} /> */}
+      <img
+        src="/caroni-branding/logo_fao_caroni.webp?v=f07153eaca76"
+        alt="Ministerio del Poder Popular para el Ecosocialismo"
+        width={520}
+        height={90}
+        style={{
+          marginTop: "20px",
+          width: "350px",
+          maxWidth: "calc(100vw - 40px)",
+          height: "auto",
+          objectFit: "contain"
+        }}
+      />
     </div>
   );
 };

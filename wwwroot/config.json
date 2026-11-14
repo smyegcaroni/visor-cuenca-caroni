@@ -1,7 +1,5 @@
 {
-  "initializationUrls": [
-    "smyeg_geolens_auto"
-  ],
+  "initializationUrls": ["smyeg_geolens_auto"],
   "parameters": {
     "googleUrlShortenerKey": null,
     "googleAnalyticsKey": null,
@@ -15,18 +13,18 @@
     "appName": "Visor Cartográfico | Cuenca del Río Caroní",
     "brandBarElements": [
       "",
-      "<a href=\"https://visor.caroni.org.ve\"><img src=\"/caroni-branding/logo_fao_caroni.png?v=fe76114f2c7d\" width=\"350\" height=\"40\" style=\"max-width:100%;height:auto;object-fit:contain\" title=\"Version: {{version}}\" /></a>",
+      "<a href=\"https://visor.caroni.org.ve\" target=\"_self\"><img alt=\"Ministerio del Poder Popular para el Ecosocialismo\" src=\"/caroni-branding/logo_fao_caroni.webp?v=f07153eaca76\" width=\"520\" height=\"90\" style=\"max-width:100%;height:auto;object-fit:contain\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
     "supportEmail": "smyeg.caroni@gmail.com",
     "theme": {
-      "charcoalGrey": "#1C4767",
-      "colorPrimary": "#5792c9",
-      "transparent-dark": "#1C4767",
+      "charcoalGrey": "#FCE000",
+      "colorPrimary": "#A8C256",
+      "transparent-dark": "#245C66",
       "colorSplitter": "#ecad02",
       "compassWidth": "56",
-      "dark": "#1C4767",
-      "darkWithOverlay": "#5792c9",
+      "dark": "#245C66",
+      "darkWithOverlay": "#0b4651",
       "frontComponentZIndex": "99",
       "grey": "#ffffff",
       "greyLighter": "#ddd",
@@ -42,7 +40,7 @@
       "modalHighlight": "#116AAB",
       "modalText": "#000",
       "overlay": "rgba(255, 255, 255, 0.25)",
-      "overlayInvert": "rgba(255, 255, 255, 0.85)",
+      "overlayInvert": "rgba(255, 255, 255, 0.99)",
       "radius40Button": "50",
       "radiusLarge": "50",
       "radiusSmall": "50",
@@ -56,7 +54,7 @@
       "textLightDimmed": "#bbbbbb",
       "trainerHeight": "64",
       "workbenchWidth": "350",
-      "fontImports": "@import url(\"caroni-branding/caroni-colors.css?v=98b150fef471\");\n"
+      "fontImports": "@import url(\"caroni-branding/caroni-colors.css?v=20261114-branding\");\n"
     },
     "proj4ServiceBaseUrl": "proj4def/",
     "tabbedCatalog": true,

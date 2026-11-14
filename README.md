@@ -1,10 +1,14 @@
 # Visor de la Cuenca del Río Caroní
 
-Visor del Sistema de Monitoreo y Evaluación Geoespacial (SMyEG), basado en TerriaMap. Instancia pública: [visor.caroni.org.ve](https://visor.caroni.org.ve). Catálogo GeoLens: [catalogo.caroni.org.ve](https://catalogo.caroni.org.ve).
+Visor del Sistema de Monitoreo y Evaluación Geoespacial (SMyEG), basado en TerriaMap. Instancia pública: [visor.caroni.org.ve](https://visor.caroni.org.ve). Catálogo de Datos Geoespaciales: [catalogo.caroni.org.ve](https://catalogo.caroni.org.ve).
 
 ## Personalización
 
-El encabezado y la pantalla de carga usan `logo_fao_caroni.png`; la pantalla de carga muestra el logo a 350 × 40 px. La barra superior incluye **Sobre el proyecto** y **Catalogo Geodatos**, en ese orden antes de Map Settings. Ambos enlaces abren una pestaña nueva. Se retiró el botón About.
+El encabezado y la pantalla de carga usan `wwwroot/caroni-branding/logo_fao_caroni.webp`, con la identidad del Ministerio del Poder Popular para el Ecosocialismo y de la Cuenca del Río Caroní. El archivo original mide 520 × 90 px y se muestra conservando su proporción. La pantalla de carga utiliza un ancho de 350 px y se adapta a ventanas más estrechas.
+
+La barra superior incluye **El proyecto** y **Catalogo Geodatos**, en ese orden antes de la configuración del mapa. Ambos enlaces abren una pestaña nueva; el logo del encabezado abre el visor en la misma pestaña. Se retiró el botón About.
+
+El tema usa `#0b4651` en `darkWithOverlay` y `#A8C256` en `colorPrimary` y en los fondos de los botones superiores y de las acciones de datos. Las plantillas públicas `wwwroot/config.json` y `runtime/branding/config.template.json` contienen la misma identidad visual.
 
 Los estilos están en `wwwroot/caroni-branding/caroni-colors.css` y `lib/Views/global.scss`. Los módulos JS y CSS compilados incorporan un hash en el nombre para evitar que el navegador conserve una navegación anterior después del despliegue.
 
